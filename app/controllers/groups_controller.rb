@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
   def index
-    @groups=Group.all
+    @groups = Group.all
   end
 
 def show
@@ -12,7 +12,7 @@ def edit
 end
 
   def new
-    @groups=Group.new
+    @groups = Group.new
   end
 
 def create
@@ -24,6 +24,7 @@ end
 
 def update
   @group = Group.find(params[:id])
+
   @group.update(group_params)
 
   redirect_to groups_path, notice: "Update Success"
